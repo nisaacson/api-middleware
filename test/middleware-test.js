@@ -5,6 +5,7 @@ var request = require('request')
 var inspect = require('eyespect').inspector({maxLength:10820});
 var middleware = require('../index')
 var express = require('express')
+var config = require('nconf').env().argv()
 describe('Middleware', function () {
   var role = 'middlewareTestServer'
   var app, server, port
@@ -27,7 +28,7 @@ describe('Middleware', function () {
     }
     app = express()
     var data = {
-      config: {},
+      config: config,
       logger: logger,
       db: {},
       app: app,

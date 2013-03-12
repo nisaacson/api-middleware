@@ -1,6 +1,6 @@
 {
   "name": "api-middleware",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "collection of middleware for express servers",
   "main": "index.js",
   "scripts": {
@@ -21,6 +21,7 @@
   "devDependencies": {
     "should": "~1.2.2",
     "mocha": "~1.8.2",
-    "portfinder": "~0.2.1"
+    "portfinder": "~0.2.1",
+    "nconf": "~0.6.7"
   }
 }
