@@ -1,0 +1,15 @@
+{
+  "name": "docparse-api-middleware",
+  "version": "1.0.0",
+  "description": "middleware for api-based docparse servers",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha"
+  },
+  "repository": "",
+  "keywords": [
+    "docparse"
+  ],
+  "author": "Noah Isaacson",
+  "license": "BSD"
+}
