@@ -1,3 +1,4 @@
+var inspect = require('eyespect').inspector({maxLength:10820});
 var passport = require('passport');
 var express = require('express');
 var should = require('should');
@@ -6,7 +7,10 @@ module.exports = function(data) {
   var keys = ['config', 'logger', 'db', 'app', 'role'];
   var type = data.role
   var err = rk.truthySync(data, keys);
-  should.not.exist(err, 'missing key when setting up api middleware: ' + err);
+  if (err) {
+    inspect(err, 'missing key when setting up middleware')
+    should.not.exist(err, 'missing key when setting up api middleware: ' + JSON.stringify(err, null, ' '))
+  }
   var config = data.config;
   var logger = data.logger;
   var db = data.db;

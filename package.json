@@ -1,15 +1,26 @@
 {
-  "name": "docparse-api-middleware",
+  "name": "api-middleware",
   "version": "1.0.0",
-  "description": "middleware for api-based docparse servers",
+  "description": "collection of middleware for express servers",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha"
+    "test": "node_modules/.bin/mocha --reporter spec"
   },
   "repository": "",
   "keywords": [
     "docparse"
   ],
   "author": "Noah Isaacson",
-  "license": "BSD"
+  "license": "BSD",
+  "dependencies": {
+    "required-keys": "~1.0.4",
+    "passport": "~0.1.16",
+    "express": "~3.1.0",
+    "should": "~1.2.2"
+  },
+  "devDependencies": {
+    "should": "~1.2.2",
+    "mocha": "~1.8.2",
+    "portfinder": "~0.2.1"
+  }
 }
