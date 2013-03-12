@@ -15,6 +15,8 @@ module.exports = function(data) {
   var logger = data.logger;
   var db = data.db;
   var app = data.app;
+  var cookieSecret = config.get('application:cookieSecret') || 'fooCookieSecret'
+  app.use(express.cookieParser({secret: cookieSecret}));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(passport.initialize());
