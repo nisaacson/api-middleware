@@ -37,6 +37,8 @@ describe('Middleware', function () {
     middleware(data)
 
     app.get('/ping', function (req, res) {
+      req.should.have.property('role')
+      req.role.should.eql(data.role)
       res.end('pong')
     })
     app.get('/pong', function (req, res) {
