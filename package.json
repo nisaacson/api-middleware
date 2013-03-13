@@ -1,6 +1,6 @@
 {
   "name": "api-middleware",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "collection of middleware for express servers",
   "main": "index.js",
   "scripts": {
