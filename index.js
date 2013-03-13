@@ -5,7 +5,7 @@ var should = require('should');
 var rk = require('required-keys');
 module.exports = function(data) {
   var keys = ['config', 'logger', 'db', 'app', 'role'];
-  var type = data.role
+  var role = data.role
   var err = rk.truthySync(data, keys);
   if (err) {
     inspect(err, 'missing key when setting up middleware')
@@ -20,13 +20,14 @@ module.exports = function(data) {
   app.use(passport.initialize());
   app.use(function (req, res, next) {
     logger.debug('request received', {
-      type: type,
+      role: role,
       service: 'docparse',
       url: req.url,
       body: req.body,
       headers: req.headers,
       query: req.query
     })
+    req.role = role
     req.config = config;
     req.db = db;
     req.logger = logger;
