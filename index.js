@@ -19,13 +19,6 @@ module.exports = function(data) {
   app.use(express.methodOverride());
   app.use(passport.initialize());
   var logRequests = config.get('logRequests')
-  app.use(function (req, res, next) {
-    req.role = role
-    req.config = config;
-    req.db = db;
-    req.logger = logger;
-    next();
-  });
   if (logRequests) {
     app.use(function (req, res, next) {
       logger.debug('request received', {
